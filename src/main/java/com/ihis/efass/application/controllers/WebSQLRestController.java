@@ -20,7 +20,7 @@ public class WebSQLRestController {
     @Autowired
     private WebSQLService webSQLService;
 
-    @RequestMapping("/{tableName}")
+    @RequestMapping("/sql/{tableName}")
     ResponseEntity<List<Object>> selectTable(@PathVariable String tableName) {
         List<Object> object = webSQLService.select(tableName);
         LOGGER.info("LOGGING Result from DB : {}", object);
