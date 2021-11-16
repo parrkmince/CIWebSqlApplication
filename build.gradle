@@ -23,7 +23,8 @@ dependencies {
 //	implementation 'org.hibernate:hibernate-core'
 	runtimeOnly 'com.microsoft.sqlserver:mssql-jdbc'
 	runtimeOnly 'mysql:mysql-connector-java'
-	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	implementation group: 'org.apache.commons', name: 'commons-lang3', version: '3.0'
+
 }
 
 test {

@@ -1,6 +1,9 @@
 package com.ihis.efass.application.pojos;
 
 import javax.persistence.*;
+import java.lang.reflect.Field;
+import java.util.HashMap;
+import java.util.Map;
 
 @Entity
 @Table(name = "EFASS_PROPSCONFIG")
@@ -8,12 +11,12 @@ import javax.persistence.*;
 public class EFASSPropsConfig {
 
     @Id
-    @Column(name = "application")
+    @Column(name = "APPLICATION")
     private String application;
     @Id
-    @Column(name = "key_")
+    @Column(name = "KEY_")
     private String key_;
-    @Column(name = "value")
+    @Column(name = "VALUE")
     private String value;
 
     public String getApplication() {

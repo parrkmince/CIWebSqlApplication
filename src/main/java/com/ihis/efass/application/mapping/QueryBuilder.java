@@ -6,8 +6,11 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.ImportResource;
+import org.springframework.util.CollectionUtils;
 
 import java.util.HashMap;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 @Configuration
 @ImportResource("classpath:beans.xml")
@@ -15,7 +18,7 @@ public class QueryBuilder {
 
     private final static Logger LOGGER = LoggerFactory.getLogger(WebSQLRestController.class);
 
-    private static final String SELECT = "FROM ";
+    private static final String SELECT = " FROM ";
 
     @Autowired
     private static HashMap tableNames;
@@ -28,9 +31,13 @@ public class QueryBuilder {
         QueryBuilder.tableNames = tableNames;
     }
 
-    public static String selectTable(String tableName){
+    public static String selectTable(String tableName, Map<String, String> columns){
         LOGGER.info("tableMap content : {}", getTableNames());
         StringBuilder sb = new StringBuilder();
-        return sb.append(SELECT).append(getTableNames().get(tableName)).toString();
+        if(CollectionUtils.isEmpty(columns)){
+            return sb.append(SELECT).append(getTableNames().get(tableName)).toString();
+        }else{
+            return sb.append(columns.values().stream().collect(Collectors.joining(", "))).append(SELECT).append(getTableNames().get(tableName)).toString();
+        }
     }
 }

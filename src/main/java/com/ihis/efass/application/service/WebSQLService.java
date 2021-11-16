@@ -5,17 +5,41 @@ import com.ihis.efass.application.repository.WebSQLRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.persistence.Column;
+import java.lang.reflect.Field;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @Service
 public class WebSQLService {
     @Autowired
     private WebSQLRepository webSQLRepository;
 
-
-
-    public List<Object> select(String tableName){
-       List<Object> result = webSQLRepository.select(QueryBuilder.selectTable(tableName));
+    public List<Object> select(String tableName, Map<String, String> conditions){
+       List<Object> result = webSQLRepository.select(QueryBuilder.selectTable(tableName, null), conditions);
        return result;
+    }
+
+    public List<Object> selectWithColumns(String tableName, Map<String, String> columns, Map<String, String> conditions){
+        List<Object> result = webSQLRepository.select(QueryBuilder.selectTable(tableName, columns), conditions);
+        return result;
+    }
+
+    public List<Object> insertQuery(String query){
+        return webSQLRepository.inserQuery(query);
+    }
+
+    public Integer modifyQuery(String query){
+        return webSQLRepository.modifyQuery(query);
+    }
+
+    public Map<String,String> getFieldColumnMapping(String tableName) throws ClassNotFoundException {
+        Class<?> cls = Class.forName(QueryBuilder.getTableNames().get(tableName).toString());
+        Map<String,String> fieldColumnMap = new HashMap<>();
+        for(Field field : cls.getClass().getDeclaredFields()){
+            fieldColumnMap.put(field.getName(), field.getAnnotation(Column.class).name());
+        }
+        return fieldColumnMap;
     }
 }

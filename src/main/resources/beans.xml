@@ -13,8 +13,8 @@
     <bean id="tableMap" class="java.util.HashMap" scope="prototype" >
         <constructor-arg>
             <map key-type="java.lang.String" value-type="java.lang.String">
-                <entry key="EFASS_PROPSCONFIG" value="EFASSPropsConfig" />
-                <entry key="ASSESSMENT_QUESTION" value="AssessmentQuestion" />
+                <entry key="EFASS_PROPSCONFIG" value="com.ihis.efass.application.pojos.EFASSPropsConfig" />
+                <entry key="ASSESSMENT_QUESTION" value="com.ihis.efass.application.pojos.AssessmentQuestion" />
             </map>
         </constructor-arg>
     </bean>

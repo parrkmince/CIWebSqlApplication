@@ -1,4 +1,3 @@
-/*
 package com.ihis.efass.application;
 
 import org.junit.jupiter.api.Test;
@@ -12,4 +11,3 @@ class CiWebSqlApplicationTests {
 	}
 
 }
-*/
