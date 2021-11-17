@@ -16,13 +16,13 @@ public class WebSQLService {
     @Autowired
     private WebSQLRepository webSQLRepository;
 
-    public List<Object> select(String tableName, Map<String, String> conditions){
-       List<Object> result = webSQLRepository.select(QueryBuilder.selectTable(tableName, null), conditions);
+    public List<Object> select(String tableName, String conditions) throws ClassNotFoundException {
+       List<Object> result = webSQLRepository.select(QueryBuilder.buildQuery(tableName, null, conditions, getFieldColumnMapping(tableName)));
        return result;
     }
 
-    public List<Object> selectWithColumns(String tableName, Map<String, String> columns, Map<String, String> conditions){
-        List<Object> result = webSQLRepository.select(QueryBuilder.selectTable(tableName, columns), conditions);
+    public List<Object> selectWithColumns(String tableName, Map<String, String> columns, String conditions) throws ClassNotFoundException {
+        List<Object> result = webSQLRepository.select(QueryBuilder.buildQuery(tableName, columns, conditions, getFieldColumnMapping(tableName)));
         return result;
     }
 

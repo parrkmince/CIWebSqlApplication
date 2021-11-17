@@ -33,12 +33,6 @@ public class WebSQLRepository {
         return query.getResultList();
     }
 
-    public List<Object> select(String queryString, Map<String,String> conditions){
-        LOGGER.info("SELECTING {}",queryString);
-        Query query = entityManager.createQuery(queryString);
-        return query.getResultList();
-    }
-
     public List<Object> inserQuery(String query){
         LOGGER.info("Executing insert query : {}", query);
         Query result = entityManager.createNativeQuery(query);

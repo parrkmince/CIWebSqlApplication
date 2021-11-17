@@ -9,7 +9,7 @@ public class WebSQLRequest implements Serializable {
 
     private Map<String, String> selectedColumns;
 
-    private Map<String,String> condition;
+    private String condition;
 
     private String manualQuery;
 
@@ -32,11 +32,11 @@ public class WebSQLRequest implements Serializable {
         this.selectedColumns = selectedColumns;
     }
 
-    public Map<String, String> getCondition() {
+    public String getCondition() {
         return condition;
     }
 
-    public void setCondition(Map<String, String> condition) {
+    public void setCondition(String condition) {
         this.condition = condition;
     }
 

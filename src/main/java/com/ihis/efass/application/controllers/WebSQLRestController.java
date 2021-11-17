@@ -24,7 +24,7 @@ public class WebSQLRestController {
     private WebSQLService webSQLService;
 
     @RequestMapping("/sql/quickview/select")
-    ResponseEntity<WebSQLResponse> selectTable(@RequestBody WebSQLRequest webSQLRequest) {
+    ResponseEntity<WebSQLResponse> selectTable(@RequestBody WebSQLRequest webSQLRequest) throws ClassNotFoundException {
         List<Object> object = (null != webSQLRequest.getSelectedColumns()) ? webSQLService.select(webSQLRequest.getTableName(), webSQLRequest.getCondition()) : webSQLService.selectWithColumns(webSQLRequest.getTableName(), webSQLRequest.getSelectedColumns(), webSQLRequest.getCondition());
         LOGGER.info("LOGGING Result from DB : {}", object);
         return new ResponseEntity<>(new WebSQLResponse(object), HttpStatus.OK);
