@@ -34,6 +34,10 @@ public class WebSQLService {
         return webSQLRepository.modifyQuery(query);
     }
 
+    public Map<String,String> getTableMap() throws ClassNotFoundException {
+        return QueryBuilder.getTableNames();
+    }
+
     public Map<String,String> getFieldColumnMapping(String tableName) throws ClassNotFoundException {
         Class<?> cls = Class.forName(QueryBuilder.getTableNames().get(tableName).toString());
         Map<String,String> fieldColumnMap = new HashMap<>();

@@ -44,8 +44,15 @@ public class WebSQLRestController {
         return new ResponseEntity<>(new WebSQLResponse(updatedDeleted), HttpStatus.OK);
     }
 
-    @RequestMapping("/ref/quickview/map")
+    @RequestMapping("/ref/quickview/tablemap")
     ResponseEntity<WebSQLResponse> getTableMap(@RequestBody WebSQLRequest webSQLRequest) throws ClassNotFoundException {
+        Map<String,String> tableMap = webSQLService.getTableMap();
+        LOGGER.info("Table map : {}", tableMap);
+        return new ResponseEntity<>(new WebSQLResponse(null,null,tableMap,null), HttpStatus.OK);
+    }
+
+    @RequestMapping("/ref/quickview/fieldcolmap")
+    ResponseEntity<WebSQLResponse> getColumnMap(@RequestBody WebSQLRequest webSQLRequest) throws ClassNotFoundException {
         Map<String,String> fieldColumnMapping = webSQLService.getFieldColumnMapping(webSQLRequest.getTableName());
         LOGGER.info("Table field and column map : {}", fieldColumnMapping);
         return new ResponseEntity<>(new WebSQLResponse(fieldColumnMapping), HttpStatus.OK);

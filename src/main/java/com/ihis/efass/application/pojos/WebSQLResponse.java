@@ -10,7 +10,16 @@ public class WebSQLResponse implements Serializable {
 
     private Integer updateDelete;
 
+    private Map<String,String> tableMap;
+
     private Map<String,String> fieldColumnMap;
+
+    public WebSQLResponse(List<Object> result, Integer updateDelete, Map<String, String> tableMap, Map<String, String> fieldColumnMap) {
+        this.result = result;
+        this.updateDelete = updateDelete;
+        this.tableMap = tableMap;
+        this.fieldColumnMap = fieldColumnMap;
+    }
 
     public WebSQLResponse() {}
 
@@ -50,11 +59,20 @@ public class WebSQLResponse implements Serializable {
         this.fieldColumnMap = fieldColumnMap;
     }
 
+    public Map<String, String> getTableMap() {
+        return tableMap;
+    }
+
+    public void setTableMap(Map<String, String> tableMap) {
+        this.tableMap = tableMap;
+    }
+
     @Override
     public String toString() {
         return "WebSQLResponse{" +
                 "result=" + result +
                 ", updateDelete=" + updateDelete +
+                ", tableMap=" + tableMap +
                 ", fieldColumnMap=" + fieldColumnMap +
                 '}';
     }
