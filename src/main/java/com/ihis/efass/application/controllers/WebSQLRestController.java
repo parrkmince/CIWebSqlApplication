@@ -11,6 +11,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 import java.util.List;
 import java.util.Map;
@@ -45,14 +46,14 @@ public class WebSQLRestController {
     }
 
     @RequestMapping("/ref/quickview/tablemap")
-    ResponseEntity<WebSQLResponse> getTableMap(@RequestBody WebSQLRequest webSQLRequest) throws ClassNotFoundException {
+    ResponseEntity<WebSQLResponse> getTableMap() throws ClassNotFoundException {
         Map<String,String> tableMap = webSQLService.getTableMap();
         LOGGER.info("Table map : {}", tableMap);
         return new ResponseEntity<>(new WebSQLResponse(null,null,tableMap,null), HttpStatus.OK);
     }
 
-    @RequestMapping("/ref/quickview/fieldcolmap")
-    ResponseEntity<WebSQLResponse> getColumnMap(@RequestBody WebSQLRequest webSQLRequest) throws ClassNotFoundException {
+   @RequestMapping(value = "/ref/quickview/fieldcolmap", method = RequestMethod.POST)
+   ResponseEntity<WebSQLResponse> getColumnMap(@RequestBody WebSQLRequest webSQLRequest) throws ClassNotFoundException {
         Map<String,String> fieldColumnMapping = webSQLService.getFieldColumnMapping(webSQLRequest.getTableName());
         LOGGER.info("Table field and column map : {}", fieldColumnMapping);
         return new ResponseEntity<>(new WebSQLResponse(fieldColumnMapping), HttpStatus.OK);

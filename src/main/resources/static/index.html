@@ -3,7 +3,10 @@
 <head>
     <title>Hello WebSocket</title>
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/css/fontawesome.min.css" rel="stylesheet">
+    <link href="assets/css/regular.min.css" rel="stylesheet">
+    <link href="assets/css/solid.min.css" rel="stylesheet">
 
 </head>
 <body>
@@ -49,46 +52,38 @@
                             <div class="col-10">
                                 <div class="row justify-content-md-between">
                                     <div class="col-md-5">
-                                        <label for="validationCustom01" class="form-label"><strong>Server</strong></label>
-                                        <select class="form-select" aria-label="Default select example">
-                                            <option selected>Open this select menu</option>
-                                            <option value="1">One</option>
-                                            <option value="2">Two</option>
-                                            <option value="3">Three</option>
+                                        <label for="validationCustom01" class="form-label"><strong>Environment</strong></label>
+                                        <select id="ci_server_dropdown" class="form-select" aria-label="Default select example">
+                                            <option selected>Select Environment</option>
+                                            <option value="DEV">DEV</option>
+                                            <option value="ST">ST</option>
+                                            <option value="SIT Internet">SIT Internet</option>
+                                            <option value="SIT Intranet">SIT Intranet</option>
+                                            <option value="UAT">UAT</option>
+                                            <option value="PPRT">PPRT</option>
                                         </select>
-                                        <div class="valid-feedback">
-                                            Looks good!
-                                        </div>
                                     </div>
                                     <div class="col-md-5">
                                         <label for="validationCustom02" class="form-label text-bold"><strong>Table</strong></label>
-                                        <select class="form-select" aria-label="Default select example">
-                                            <option selected>Open this select menu</option>
-                                            <option value="1">One</option>
-                                            <option value="2">Two</option>
-                                            <option value="3">Three</option>
+                                        <select id="ci_tables_dropdown" class="form-select" aria-label="Default select example">
+                                            <option selected>Select Table</option>
                                         </select>
-                                        <div class="valid-feedback">
-                                            Looks good!
-                                        </div>
                                     </div>
                                 </div>
                                 <div class="row justify-content-md-between mt-4">
                                     <div class="col-5">
                                         <label for="validationCustom01" class="form-label"><strong>Table Columns</strong></label>
                                         <select name="from[]" id="multiselect" class="form-control" size="8" multiple="multiple">
-                                            <option value="1">Columns1/elements1</option>
-                                            <option value="2">Columns2/elements2</option>
-                                            <option value="3">Columns3/elements3</option>
-                                            <option value="4">Columns4/elements4</option>
+                                            <!--<option value="1">Columns1/elements1</option> -->
+
                                         </select>
                                     </div>
 
                                     <div class="col-1 mt-5">
-                                        <button type="button" id="multiselect_rightAll" class="btn btn-block">>></button>
-                                        <button type="button" id="multiselect_rightSelected" class="btn btn-block">></button>
-                                        <button type="button" id="multiselect_leftSelected" class="btn btn-block"><<</button>
-                                        <button type="button" id="multiselect_leftAll" class="btn btn-block"><</button>
+                                        <button type="button" id="multiselect_rightAll" class="btn btn-block"><i class="fa fa-lg fa-angle-double-right"></i></button>
+                                        <button type="button" id="multiselect_rightSelected" class="btn btn-block"><i class="fa fa-lg fa-angle-right"></i></button>
+                                        <button type="button" id="multiselect_leftSelected" class="btn btn-block"><i class="fa fa-lg fa-angle-double-right"></i></button>
+                                        <button type="button" id="multiselect_leftAll" class="btn btn-block"><i class="fa fa-lg fa-angle-left"></i></button>
                                     </div>
 
                                     <div class="col-5">
@@ -99,20 +94,41 @@
                                 <div class="row justify-content-md-between mt-4">
                                     <div class="col-12">
                                         <label for="exampleFormControlTextarea1" class="form-label"><strong>Query Condition</strong></label>
-                                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                        <textarea class="form-control" id="ci_query_condition" rows="3"></textarea>
                                     </div>
                                 </div>
                                 <div class="row mt-4 float-end">
                                     <div class="col-12">
-                                        <button type="button" class="btn btn-light me-2">Reset</button>
-                                        <button type="button" class="btn btn-primary">Execute</button>
+                                        <button id="ci_quick_view_reset" type="button"  class="btn btn-light me-2">Reset</button>
+                                        <button id="ci_quick_view_execute" type="button" class="btn btn-primary">Execute</button>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="tab-pane" id="manual-query">
-
+                        <div class="row justify-content-md-center mt-3">
+                            <div class="col-10">
+                                <div class="row justify-content-md-between mt-4">
+                                    <div class="col-12">
+                                        <label for="exampleFormControlTextarea1" class="form-label"><strong>Manual Query</strong></label>
+                                        <textarea class="form-control" id="ci_manual_query_script" rows="5"></textarea>
+                                    </div>
+                                </div>
+                                <div class="row justify-content-md-between mt-4">
+                                    <div class="col-12">
+                                        <label for="exampleFormControlTextarea1" class="form-label"><strong>Response</strong></label>
+                                        <textarea class="form-control" id="ci_manual_query_response" rows="5"></textarea>
+                                    </div>
+                                </div>
+                                <div class="row mt-4 float-end">
+                                    <div class="col-12">
+                                        <button id="ci_manual_query_reset" type="button" class="btn btn-light me-2">Reset</button>
+                                        <button id="ci_manual_query_execute" type="button" class="btn btn-primary">Execute</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
                 </div>
@@ -125,14 +141,8 @@
 <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://www.jqueryscript.net/demo/Two-side-Multi-Select-Plugin-with-jQuery-multiselect-js/js/multiselect.js"></script>
-<script type="text/javascript">
-$(function(){
+<script src="assets/js/web_sql.js"></script>
 
-$('#multiselect').multiselect();
-
-});
-
-</script>
 
 </body>
 </html>
