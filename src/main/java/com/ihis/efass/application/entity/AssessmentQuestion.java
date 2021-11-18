@@ -1,17 +1,18 @@
-package com.ihis.efass.application.pojos;
+package com.ihis.efass.application.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import java.io.Serializable;
 
 @Entity
 @Table(name = "ASSESSMENT_QUESTION")
-public class AssessmentQuestion {
+public class AssessmentQuestion implements Serializable {
 
     @Id
     @Column(name = "id_")
-    private String id_;
+    private Float id_;
     @Column(name = "QUESTION_NUMBER")
     private String questionNumber;
     @Column(name = "EXTERNAL_QUESTION_ID")
@@ -41,11 +42,11 @@ public class AssessmentQuestion {
     @Column(name = "LAST_UPDATED_DATE")
     private String lastUpdatedDate;
 
-    public String getId_() {
+    public Float getId_() {
         return id_;
     }
 
-    public void setId_(String id_) {
+    public void setId_(Float id_) {
         this.id_ = id_;
     }
 

@@ -45,7 +45,7 @@ public class WebSQLRestController {
     }
 
     @RequestMapping("/ref/quickview/tablemap")
-    ResponseEntity<WebSQLResponse> getTableMap(@RequestBody WebSQLRequest webSQLRequest) throws ClassNotFoundException {
+    ResponseEntity<WebSQLResponse> getTableMap() throws ClassNotFoundException {
         Map<String,String> tableMap = webSQLService.getTableMap();
         LOGGER.info("Table map : {}", tableMap);
         return new ResponseEntity<>(new WebSQLResponse(null,null,tableMap,null), HttpStatus.OK);

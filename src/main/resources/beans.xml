@@ -13,8 +13,46 @@
     <bean id="tableMap" class="java.util.HashMap" scope="prototype" >
         <constructor-arg>
             <map key-type="java.lang.String" value-type="java.lang.String">
-                <entry key="EFASS_PROPSCONFIG" value="com.ihis.efass.application.pojos.EFASSPropsConfig" />
-                <entry key="ASSESSMENT_QUESTION" value="com.ihis.efass.application.pojos.AssessmentQuestion" />
+                <entry key="ASSESSMENT_ANSWER" value="com.ihis.efass.application.entity.AssessmentAnswer" />
+                <entry key="ASSESSMENT_HISTORY" value="com.ihis.efass.application.entity.AssessmentHistory" />
+                <entry key="ASSESSMENT_METADATA" value="com.ihis.efass.application.entity.AssessmentMetadata" />
+                <entry key="ASSESSMENT_QUESTION" value="com.ihis.efass.application.entity.AssessmentQuestion" />
+                <entry key="ASSESSMENT_SECTION" value="com.ihis.efass.application.entity.AssessmentSection" />
+                <entry key="ASSESSMENT_SERVICE_AUDIT" value="com.ihis.efass.application.entity.AssessmentServiceAudit" />
+                <entry key="ASSESSMENT_SERVICE_EXTENSION" value="com.ihis.efass.application.entity.AssessmentServiceExtension" />
+                <entry key="ASSESSOR_STAGING" value="com.ihis.efass.application.entity.AssessorStaging" />
+                <entry key="CLAIM_TYPE_CALC" value="com.ihis.efass.application.entity.ClaimTypeCalc" />
+                <entry key="EFASS_APP_SCHEME_TRANSACTION" value="com.ihis.efass.application.entity.EfassAppSchemeTransaction" />
+                <entry key="EFASS_BATCH_STATUS" value="com.ihis.efass.application.entity.EfassBatchStatus" />
+                <entry key="EFASS_CODESET" value="com.ihis.efass.application.entity.EfassCodeset" />
+                <entry key="EFASS_ENQUIRY_CATEGORY" value="com.ihis.efass.application.entity.EfassEnquiryCategory" />
+                <entry key="EFASS_ENQUIRY_TRANSACTION" value="com.ihis.efass.application.entity.EfassEnquiryTransaction" />
+                <entry key="EFASS_ERROR_TRANSACTION" value="com.ihis.efass.application.entity.EfassErrorTransaction" />
+                <entry key="EFASS_MAINTENANCE_BANNER" value="com.ihis.efass.application.entity.EfassMaintenanceBanner" />
+                <entry key="EFASS_NOTIFICATION" value="com.ihis.efass.application.entity.EfassNotification" />
+                <entry key="EFASS_ONLINE_HELP_CATEGORY" value="com.ihis.efass.application.entity.EfassOnlineHelpCategory" />
+                <entry key="EFASS_ONLINE_HELP_QUESTIONS" value="com.ihis.efass.application.entity.EfassOnlineHelpQuestion" />
+                <entry key="EFASS_ORGANISATION_TRANS" value="com.ihis.efass.application.entity.EfassOrganisationTrans" />
+                <entry key="EFASS_PENDING_TASK" value="com.ihis.efass.application.entity.EfassPendingTask" />
+                <entry key="EFASS_PROPSCONFIG" value="com.ihis.efass.application.entity.EfassPropsConfig" />
+                <entry key="EFASS_QUEUE_TRANSACTION" value="com.ihis.efass.application.entity.EfassQueueTransaction" />
+                <entry key="EFASS_SCHEME" value="com.ihis.efass.application.entity.EfassScheme" />
+                <entry key="EFASS_SERVICE_AUDIT" value="com.ihis.efass.application.entity.EfassServiceAudit" />
+                <entry key="EFASS_SERVICE_EXTENSION" value="com.ihis.efass.application.entity.EfassServiceExtension" />
+                <entry key="EFASS_SERVICE_XML_LOG" value="com.ihis.efass.application.entity.EfassServiceXmlLog" />
+                <entry key="EFASS_SESSION_TRACKER" value="com.ihis.efass.application.entity.EfassSessionTracker" />
+                <entry key="EFASS_TERMS_OF_USE" value="com.ihis.efass.application.entity.EfassTermsOfUse" />
+                <entry key="EFASS_USER_PROFILE_TRANASCTION" value="com.ihis.efass.application.entity.EfassUserProfileTransaction" />
+                <entry key="FEE_CALCULATION" value="com.ihis.efass.application.entity.FeeCalculation" />
+                <entry key="INSTITUTION_MASTER" value="com.ihis.efass.application.entity.InstitutionMaster" />
+                <entry key="PP_USER" value="com.ihis.efass.application.entity.PpUser" />
+                <entry key="PROVIDE_APPEAL_CONSENT" value="com.ihis.efass.application.entity.ProvideAppealConsent" />
+                <entry key="ROLE_" value="com.ihis.efass.application.entity.Role_" />
+                <entry key="SPA_AP_USER_STAGING" value="com.ihis.efass.application.entity.SpApUserStaging" />
+                <entry key="STUB_RESP_TABLE" value="com.ihis.efass.application.entity.StubRespTable" />
+                <entry key="USER_" value="com.ihis.efass.application.entity.User_" />
+                <entry key="USER_EXT" value="com.ihis.efass.application.entity.UserExt" />
+                <entry key="USER_INST" value="com.ihis.efass.application.entity.UserInst" />
             </map>
         </constructor-arg>
     </bean>
