@@ -1,7 +1,10 @@
 package com.ihis.efass.application.service;
 
+import com.ihis.efass.application.controllers.WebSQLRestController;
 import com.ihis.efass.application.mapping.QueryBuilder;
 import com.ihis.efass.application.repository.WebSQLRepository;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,6 +16,9 @@ import java.util.Map;
 
 @Service
 public class WebSQLService {
+
+    Logger LOGGER = LoggerFactory.getLogger(WebSQLRestController.class);
+
     @Autowired
     private WebSQLRepository webSQLRepository;
 
@@ -39,11 +45,15 @@ public class WebSQLService {
     }
 
     public Map<String,String> getFieldColumnMapping(String tableName) throws ClassNotFoundException {
-        Class<?> cls = Class.forName(QueryBuilder.getTableNames().get(tableName).toString());
+
         Map<String,String> fieldColumnMap = new HashMap<>();
-        for(Field field : cls.getClass().getDeclaredFields()){
+
+        for(Field field : Class.forName(QueryBuilder.getTableNames().get(tableName).toString()).getDeclaredFields()){
+            LOGGER.info("Class : {}", field);
+            LOGGER.info("Class : {}", field.getAnnotation(Column.class).name());
             fieldColumnMap.put(field.getName(), field.getAnnotation(Column.class).name());
         }
+        
         return fieldColumnMap;
     }
 }
