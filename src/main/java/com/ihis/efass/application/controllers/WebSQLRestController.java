@@ -8,6 +8,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.util.CollectionUtils;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -26,7 +27,7 @@ public class WebSQLRestController {
 
     @RequestMapping("/sql/quickview/select")
     ResponseEntity<WebSQLResponse> selectTable(@RequestBody WebSQLRequest webSQLRequest) throws ClassNotFoundException {
-        List<Object> object = (null != webSQLRequest.getSelectedColumns()) ? webSQLService.select(webSQLRequest.getTableName(), webSQLRequest.getCondition()) : webSQLService.selectWithColumns(webSQLRequest.getTableName(), webSQLRequest.getSelectedColumns(), webSQLRequest.getCondition());
+        List<Object> object = (CollectionUtils.isEmpty(webSQLRequest.getSelectedColumns())) ? webSQLService.select(webSQLRequest.getTableName(), webSQLRequest.getCondition()) : webSQLService.selectWithColumns(webSQLRequest.getTableName(), webSQLRequest.getSelectedColumns(), webSQLRequest.getCondition());
         LOGGER.info("LOGGING Result from DB : {}", object);
         return new ResponseEntity<>(new WebSQLResponse(object), HttpStatus.OK);
     }

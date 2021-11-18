@@ -19,6 +19,12 @@ public class EfassPropsConfig implements Serializable {
     @Column(name = "VALUE")
     private String value;
 
+    public EfassPropsConfig(String application, String key_, String value) {
+        this.application = application;
+        this.key_ = key_;
+        this.value = value;
+    }
+
     public String getApplication() {
         return application;
     }

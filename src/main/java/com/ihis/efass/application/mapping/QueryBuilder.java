@@ -9,7 +9,9 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.ImportResource;
 import org.springframework.util.CollectionUtils;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
@@ -19,7 +21,9 @@ public class QueryBuilder {
 
     private final static Logger LOGGER = LoggerFactory.getLogger(WebSQLRestController.class);
 
-    private static final String SELECT = " FROM ";
+    private static final String SELECT = "SELECT new map(";
+
+    private static final String FROM = " FROM ";
 
     private static final String WHERE = " WHERE ";
 
@@ -30,14 +34,20 @@ public class QueryBuilder {
 
     public static String buildQuery(String tableName, Map<String, String> columns, String condition, Map<String,String> fieldColumnMapping){
 
+        LOGGER.info("columns : {}", columns);
+
         QueryBuilder.setFieldColumnMapping(fieldColumnMapping);
 
         LOGGER.info("tableMap content : {}", getTableNames());
         StringBuilder sb = new StringBuilder();
         if(CollectionUtils.isEmpty(columns)){
-             sb.append(SELECT).append(getTableNames().get(tableName));
+            LOGGER.info("Selecting all columns");
+             sb.append(FROM).append(getTableNames().get(tableName));
         }else{
-            sb.append(columns.values().stream().collect(Collectors.joining(", "))).append(SELECT).append(getTableNames().get(tableName));
+            List<String> aliasedColumn = new ArrayList<>();
+            for(Map.Entry<String,String > map : columns.entrySet())
+                aliasedColumn.add(map.getKey() + " as " + map.getKey());
+            sb.append(SELECT).append(aliasedColumn.stream().collect(Collectors.joining(", "))).append(")").append(FROM).append(getTableNames().get(tableName));
         }
 
         if(StringUtils.isNotEmpty(condition)){

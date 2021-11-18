@@ -10,9 +10,8 @@ import org.springframework.stereotype.Service;
 
 import javax.persistence.Column;
 import java.lang.reflect.Field;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
+import java.util.stream.Collectors;
 
 @Service
 public class WebSQLService {
@@ -41,7 +40,17 @@ public class WebSQLService {
     }
 
     public Map<String,String> getTableMap() throws ClassNotFoundException {
-        return QueryBuilder.getTableNames();
+        Set<Map.Entry<Object, Object>> entries = QueryBuilder.getTableNames().entrySet();
+
+        LinkedHashMap<String, String> collect = entries.stream()
+                //Map<String, String>
+                .collect(Collectors.toMap(k -> (String) k.getKey(), e -> (String) e.getValue()))
+                .entrySet()
+                .stream()
+                .sorted(Map.Entry.comparingByKey())
+                .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue,
+                        (oldValue, newValue) -> oldValue, LinkedHashMap::new));
+        return collect;
     }
 
     public Map<String,String> getFieldColumnMapping(String tableName) throws ClassNotFoundException {
@@ -49,8 +58,6 @@ public class WebSQLService {
         Map<String,String> fieldColumnMap = new HashMap<>();
 
         for(Field field : Class.forName(QueryBuilder.getTableNames().get(tableName).toString()).getDeclaredFields()){
-            LOGGER.info("Class : {}", field);
-            LOGGER.info("Class : {}", field.getAnnotation(Column.class).name());
             fieldColumnMap.put(field.getName(), field.getAnnotation(Column.class).name());
         }
         
