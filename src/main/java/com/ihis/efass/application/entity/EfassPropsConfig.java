@@ -1,14 +1,14 @@
-package com.ihis.efass.application.pojos;
+package com.ihis.efass.application.entity;
+
+import com.ihis.efass.application.entity.id.EFASSPropsConfigId;
 
 import javax.persistence.*;
-import java.lang.reflect.Field;
-import java.util.HashMap;
-import java.util.Map;
+import java.io.Serializable;
 
 @Entity
 @Table(name = "EFASS_PROPSCONFIG")
 @IdClass(EFASSPropsConfigId.class)
-public class EFASSPropsConfig {
+public class EfassPropsConfig implements Serializable {
 
     @Id
     @Column(name = "APPLICATION")
@@ -45,7 +45,7 @@ public class EFASSPropsConfig {
 
     @Override
     public String toString() {
-        return "EFASSPropsConfig{" +
+        return "EfassPropsConfig{" +
                 "application='" + application + '\'' +
                 ", key_='" + key_ + '\'' +
                 ", value='" + value + '\'' +

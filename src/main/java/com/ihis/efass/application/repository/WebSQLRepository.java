@@ -1,22 +1,15 @@
 package com.ihis.efass.application.repository;
 
-import com.ihis.efass.application.controllers.WebSQLRestController;
-import com.ihis.efass.application.mapping.QueryBuilder;
-import com.ihis.efass.application.pojos.EFASSPropsConfig;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-import javax.persistence.Column;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
-import java.lang.reflect.Field;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 @Repository
 @Transactional

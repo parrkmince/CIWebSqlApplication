@@ -1,4 +1,4 @@
-package com.ihis.efass.application.pojos;
+package com.ihis.efass.application.entity.id;
 
 
 import javax.persistence.Column;
