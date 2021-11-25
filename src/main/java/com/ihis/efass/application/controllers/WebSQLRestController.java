@@ -32,7 +32,7 @@ public class WebSQLRestController {
         return new ResponseEntity<>(new WebSQLResponse(object), HttpStatus.OK);
     }
 
-    @RequestMapping("/sql/manual/insert")
+    @RequestMapping("/sql/manual/select")
     ResponseEntity<WebSQLResponse> insertQuery(@RequestBody WebSQLRequest webSQLRequest) {
         List<Object> object = webSQLService.insertQuery(webSQLRequest.getManualQuery());
         LOGGER.info("LOGGING Result from DB : {}", object);
