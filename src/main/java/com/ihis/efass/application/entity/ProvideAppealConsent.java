@@ -11,6 +11,24 @@ import java.util.Date;
 @Entity
 @Table(name = "PROVIDE_APPEAL_CONSENT")
 public class ProvideAppealConsent implements Serializable {
+    public ProvideAppealConsent() {
+    }
+
+    public ProvideAppealConsent(BigInteger id, String nric, String schemeCd, String schemeDesc, String appealTypeDesc, String appealTypeCd, Float withdrawalAmount, String forTheMonthsOf, String patientNric, String createdBy, Date createdDate, String lastUpdatedBy, Date lastUpdatedDate) {
+        this.id = id;
+        this.nric = nric;
+        this.schemeCd = schemeCd;
+        this.schemeDesc = schemeDesc;
+        this.appealTypeDesc = appealTypeDesc;
+        this.appealTypeCd = appealTypeCd;
+        this.withdrawalAmount = withdrawalAmount;
+        this.forTheMonthsOf = forTheMonthsOf;
+        this.patientNric = patientNric;
+        this.createdBy = createdBy;
+        this.createdDate = createdDate;
+        this.lastUpdatedBy = lastUpdatedBy;
+        this.lastUpdatedDate = lastUpdatedDate;
+    }
 
     @Id
     @Column(name = "ID")

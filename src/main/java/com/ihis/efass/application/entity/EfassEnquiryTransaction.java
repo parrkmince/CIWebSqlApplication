@@ -11,6 +11,25 @@ import java.util.Date;
 @Entity
 @Table(name = "EFASS_ENQUIRY_TRANSACTION")
 public class EfassEnquiryTransaction implements Serializable {
+    public EfassEnquiryTransaction() {
+    }
+
+    public EfassEnquiryTransaction(BigInteger id, String enquiryId, String enquirerId, String uen, String hci, String messageId, String status, String type, String mode, String userType, String createdBy, Date createdDate, String lastUpdatedBy, Date lastUpdatedDate) {
+        this.id = id;
+        this.enquiryId = enquiryId;
+        this.enquirerId = enquirerId;
+        this.uen = uen;
+        this.hci = hci;
+        this.messageId = messageId;
+        this.status = status;
+        this.type = type;
+        this.mode = mode;
+        this.userType = userType;
+        this.createdBy = createdBy;
+        this.createdDate = createdDate;
+        this.lastUpdatedBy = lastUpdatedBy;
+        this.lastUpdatedDate = lastUpdatedDate;
+    }
 
     @Id
     @Column(name = "ID")

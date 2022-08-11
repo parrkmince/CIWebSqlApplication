@@ -11,6 +11,22 @@ import java.util.Date;
 @Entity
 @Table(name = "EFASS_SCHEME")
 public class EfassScheme implements Serializable {
+    public EfassScheme() {
+    }
+
+    public EfassScheme(BigInteger efassSchemeId, String sourceSystem, String createdBy, Date createdDate, String lastUpdatedBy, Date lastUpdatedDate, String schemeLogo, String scheme, String schemeName, String schemeDesc, String schemeInfo) {
+        this.efassSchemeId = efassSchemeId;
+        this.sourceSystem = sourceSystem;
+        this.createdBy = createdBy;
+        this.createdDate = createdDate;
+        this.lastUpdatedBy = lastUpdatedBy;
+        this.lastUpdatedDate = lastUpdatedDate;
+        this.schemeLogo = schemeLogo;
+        this.scheme = scheme;
+        this.schemeName = schemeName;
+        this.schemeDesc = schemeDesc;
+        this.schemeInfo = schemeInfo;
+    }
 
     @Id
     @Column(name = "EFASS_SCHEME_ID")

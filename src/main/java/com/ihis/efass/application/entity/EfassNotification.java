@@ -10,6 +10,20 @@ import java.util.Date;
 @Entity
 @Table(name = "EFASS_NOTIFICATION")
 public class EfassNotification implements Serializable {
+    public EfassNotification() {
+    }
+
+    public EfassNotification(String notificationId, String transactionId, String operationalCode, String status, String createdBy, Date createdDate, String lastUpdatedBy, Date lastUpdatedDate, Date submissionDate) {
+        this.notificationId = notificationId;
+        this.transactionId = transactionId;
+        this.operationalCode = operationalCode;
+        this.status = status;
+        this.createdBy = createdBy;
+        this.createdDate = createdDate;
+        this.lastUpdatedBy = lastUpdatedBy;
+        this.lastUpdatedDate = lastUpdatedDate;
+        this.submissionDate = submissionDate;
+    }
 
     @Id
     @Column(name = "NOTIFICATION_ID")

@@ -10,6 +10,15 @@ import java.util.Date;
 @Entity
 @Table(name = "EFASS_BATCH_STATUS")
 public class EfassBatchStatus implements Serializable {
+    public EfassBatchStatus() {
+    }
+
+    public EfassBatchStatus(String processId, String jobName, String jobStatus, Date createdDate) {
+        this.processId = processId;
+        this.jobName = jobName;
+        this.jobStatus = jobStatus;
+        this.createdDate = createdDate;
+    }
 
     @Id
     @Column(name = "PROCESS_ID")

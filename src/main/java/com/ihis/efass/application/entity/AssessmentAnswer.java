@@ -11,6 +11,21 @@ import java.util.Date;
 @Table(name = "ASSESSMENT_ANSWER")
 public class AssessmentAnswer implements Serializable {
 
+    public AssessmentAnswer(Long id_, String answerNumber, String externalAnswerId, String answerText, String sourceSystem, String createdBy, Date createdDate, String lastUpdatedBy, Date lastUpdatedDate) {
+        this.id_ = id_;
+        this.answerNumber = answerNumber;
+        this.externalAnswerId = externalAnswerId;
+        this.answerText = answerText;
+        this.sourceSystem = sourceSystem;
+        this.createdBy = createdBy;
+        this.createdDate = createdDate;
+        this.lastUpdatedBy = lastUpdatedBy;
+        this.lastUpdatedDate = lastUpdatedDate;
+    }
+
+    public AssessmentAnswer() {
+    }
+
     @Id
     @Column(name = "ID_")
     private Long id_;

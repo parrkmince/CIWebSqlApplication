@@ -1,7 +1,5 @@
 package com.ihis.efass.application.entity;
 
-import com.sun.org.apache.xpath.internal.operations.Bool;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -12,6 +10,15 @@ import java.math.BigInteger;
 @Entity
 @Table(name = "FEE_CALCULATION")
 public class FeeCalculation implements Serializable{
+    public FeeCalculation() {
+    }
+
+    public FeeCalculation(String uuid_, BigInteger id, Boolean assessmentSetting, Float assessmentFee) {
+        this.uuid_ = uuid_;
+        this.id = id;
+        this.assessmentSetting = assessmentSetting;
+        this.assessmentFee = assessmentFee;
+    }
 
     @Column(name = "UUID_")
     private String  uuid_;

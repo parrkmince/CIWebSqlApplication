@@ -11,6 +11,20 @@ import java.util.Date;
 @Entity
 @Table(name = "EFASS_SERVICE_AUDIT")
 public class EfassServiceAudit implements Serializable {
+    public EfassServiceAudit() {
+    }
+
+    public EfassServiceAudit(BigInteger id, String messageId, String transactionId, String type, String processStat, String errorType, Date insertTimestamp, Date updateTimestamp, String serviceResponse) {
+        this.id = id;
+        this.messageId = messageId;
+        this.transactionId = transactionId;
+        this.type = type;
+        this.processStat = processStat;
+        this.errorType = errorType;
+        this.insertTimestamp = insertTimestamp;
+        this.updateTimestamp = updateTimestamp;
+        this.serviceResponse = serviceResponse;
+    }
 
     @Id
     @Column(name = "ID")

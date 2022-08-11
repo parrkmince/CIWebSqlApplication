@@ -11,6 +11,36 @@ import java.util.Date;
 @Entity
 @Table(name = "SPA_AP_USER_STAGING")
 public class SpApUserStaging implements Serializable {
+    public SpApUserStaging() {
+    }
+
+    public SpApUserStaging(BigInteger spaApUserStagingId, String uen, String hciId, String batchId, String firstName, String middleName, String lastName, String mohPanel, String type, String assessorNric, String assessorId, Boolean accreditedIndicator, Boolean activeIndicator, Date registrationDate, Date deactivationDate, Boolean prsAsTrainedFlag, Boolean prsFarTrainedFlag, Boolean prsMiTrainedFlag, Date createdDate, Date updatedDate, String registrationNum, String roles, String userStatus, String assessorType) {
+        this.spaApUserStagingId = spaApUserStagingId;
+        this.uen = uen;
+        this.hciId = hciId;
+        this.batchId = batchId;
+        this.firstName = firstName;
+        this.middleName = middleName;
+        this.lastName = lastName;
+        this.mohPanel = mohPanel;
+        this.type = type;
+        this.assessorNric = assessorNric;
+        this.assessorId = assessorId;
+        this.accreditedIndicator = accreditedIndicator;
+        this.activeIndicator = activeIndicator;
+        this.registrationDate = registrationDate;
+        this.deactivationDate = deactivationDate;
+        this.prsAsTrainedFlag = prsAsTrainedFlag;
+        this.prsFarTrainedFlag = prsFarTrainedFlag;
+        this.prsMiTrainedFlag = prsMiTrainedFlag;
+        this.createdDate = createdDate;
+        this.updatedDate = updatedDate;
+        this.registrationNum = registrationNum;
+        this.roles = roles;
+        this.userStatus = userStatus;
+        this.assessorType = assessorType;
+    }
+
     @Id
     @Column(name = "SPA_AP_USER_STAGING_ID")
     private BigInteger spaApUserStagingId;

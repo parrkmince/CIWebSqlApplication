@@ -10,6 +10,8 @@ import java.util.Date;
 @Entity
 @Table(name = "EFASS_ERROR_TRANSACTION")
 public class EfassErrorTransaction implements Serializable {
+    public EfassErrorTransaction() {
+    }
 
     @Id
     @Column(name = "TRANSACTION_REFERENCE_ID")

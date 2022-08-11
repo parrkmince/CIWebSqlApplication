@@ -10,6 +10,18 @@ import java.util.Date;
 @Entity
 @Table(name = "EFASS_SERVICE_XML_LOG")
 public class EfassServiceXmlLog implements Serializable {
+    public EfassServiceXmlLog() {
+    }
+
+    public EfassServiceXmlLog(String eventId, String userId, String sessionId, Date createddate, String xmlRequestMessage, String xmlResponseMessage, String eventtype) {
+        this.eventId = eventId;
+        this.userId = userId;
+        this.sessionId = sessionId;
+        this.createddate = createddate;
+        this.xmlRequestMessage = xmlRequestMessage;
+        this.xmlResponseMessage = xmlResponseMessage;
+        this.eventtype = eventtype;
+    }
 
     @Id
     @Column(name = "EVENT_ID")

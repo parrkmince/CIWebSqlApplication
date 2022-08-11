@@ -11,6 +11,21 @@ import java.util.Date;
 @Entity
 @Table(name = "EFASS_ORGANISATION_TRANS")
 public class EfassOrganisationTrans implements Serializable {
+    public EfassOrganisationTrans() {
+    }
+
+    public EfassOrganisationTrans(BigInteger id, String transactionId, String uen, String hci, String status, String type, String createdBy, Date createdDate, String lastUpdatedBy, Date lastUpdatedDate) {
+        this.id = id;
+        this.transactionId = transactionId;
+        this.uen = uen;
+        this.hci = hci;
+        this.status = status;
+        this.type = type;
+        this.createdBy = createdBy;
+        this.createdDate = createdDate;
+        this.lastUpdatedBy = lastUpdatedBy;
+        this.lastUpdatedDate = lastUpdatedDate;
+    }
 
     @Id
     @Column(name = "ID")

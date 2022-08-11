@@ -11,6 +11,31 @@ import java.util.Date;
 @Entity
 @Table(name = "EFASS_APP_SCHEME_TRANSACTION")
 public class EfassAppSchemeTransaction implements Serializable {
+    public EfassAppSchemeTransaction() {
+    }
+
+    public EfassAppSchemeTransaction(BigInteger id_, String applicationId, String messageId, String applicantId, String applicationType, String patientId, String patientName, String schemeId, String status, Date submittedDate, String appDetails, String createdBy, Date createdDate, String lastUpdatedBy, Date lastUpdatedDate, String schemeCaseId, String reasonCode, String hci, String uen, String userType) {
+        this.id_ = id_;
+        this.applicationId = applicationId;
+        this.messageId = messageId;
+        this.applicantId = applicantId;
+        this.applicationType = applicationType;
+        this.patientId = patientId;
+        this.patientName = patientName;
+        this.schemeId = schemeId;
+        this.status = status;
+        this.submittedDate = submittedDate;
+        this.appDetails = appDetails;
+        this.createdBy = createdBy;
+        this.createdDate = createdDate;
+        this.lastUpdatedBy = lastUpdatedBy;
+        this.lastUpdatedDate = lastUpdatedDate;
+        this.schemeCaseId = schemeCaseId;
+        this.reasonCode = reasonCode;
+        this.hci = hci;
+        this.uen = uen;
+        this.userType = userType;
+    }
 
     @Id
     @Column(name = "ID_")

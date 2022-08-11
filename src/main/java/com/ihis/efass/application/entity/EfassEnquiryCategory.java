@@ -11,6 +11,21 @@ import java.util.Date;
 @Entity
 @Table(name = "EFASS_ENQUIRY_CATEGORY")
 public class EfassEnquiryCategory implements Serializable {
+    public EfassEnquiryCategory() {
+    }
+
+    public EfassEnquiryCategory(BigInteger id, String enquirer, String mainCategory, String subCategory, String categorization, String status, String createdBy, Date createdDate, String lastUpdatedBy, Date lastUpdatedDate) {
+        this.id = id;
+        this.enquirer = enquirer;
+        this.mainCategory = mainCategory;
+        this.subCategory = subCategory;
+        this.categorization = categorization;
+        this.status = status;
+        this.createdBy = createdBy;
+        this.createdDate = createdDate;
+        this.lastUpdatedBy = lastUpdatedBy;
+        this.lastUpdatedDate = lastUpdatedDate;
+    }
 
     @Id
     @Column(name = "ID")

@@ -32,7 +32,7 @@ public class WebSQLService {
     }
 
     public List<Object> insertQuery(String query){
-        return webSQLRepository.inserQuery(query);
+        return webSQLRepository.insertQuery(query);
     }
 
     public Integer modifyQuery(String query){

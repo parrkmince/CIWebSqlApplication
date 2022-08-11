@@ -8,6 +8,14 @@ import java.io.Serializable;
 @Entity
 @Table(name = "STUB_RESP_TABLE")
 public class StubRespTable implements Serializable {
+    public StubRespTable() {
+    }
+
+    public StubRespTable(String uid, String responseData, String stubName) {
+        this.uid = uid;
+        this.responseData = responseData;
+        this.stubName = stubName;
+    }
 
     @Id
     @Column(name = "UID")

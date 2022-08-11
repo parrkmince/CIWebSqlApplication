@@ -1,7 +1,5 @@
 package com.ihis.efass.application.entity;
 
-import com.sun.org.apache.xpath.internal.operations.Bool;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -13,6 +11,24 @@ import java.util.Date;
 @Entity
 @Table(name = "EFASS_QUEUE_TRANSACTION")
 public class EfassQueueTransaction implements Serializable {
+    public EfassQueueTransaction() {
+    }
+
+    public EfassQueueTransaction(BigInteger id, String transactionId, String transactionType, String portalType, Boolean completeFlag, Date startTimestamp, BigInteger userId, BigInteger uen, BigInteger hci, BigInteger createdBy, Date createdDate, BigInteger lastUpdatedBy, Date lastUpdatedDate) {
+        this.id = id;
+        this.transactionId = transactionId;
+        this.transactionType = transactionType;
+        this.portalType = portalType;
+        this.completeFlag = completeFlag;
+        this.startTimestamp = startTimestamp;
+        this.userId = userId;
+        this.uen = uen;
+        this.hci = hci;
+        this.createdBy = createdBy;
+        this.createdDate = createdDate;
+        this.lastUpdatedBy = lastUpdatedBy;
+        this.lastUpdatedDate = lastUpdatedDate;
+    }
 
     @Id
     @Column(name = "ID")

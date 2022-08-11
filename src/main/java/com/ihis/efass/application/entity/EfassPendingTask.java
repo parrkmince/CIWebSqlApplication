@@ -11,6 +11,35 @@ import java.util.Date;
 @Entity
 @Table(name = "EFASS_PENDING_TASK")
 public class EfassPendingTask implements Serializable {
+    public EfassPendingTask() {
+    }
+
+    public EfassPendingTask(BigInteger id_, String transactionId, String assigneeId, String assignedDate, String applicantId, String applicationType, String patientId, String patientName, String schemeId, String todo, String reasons, String status, Date dueDate, String createdBy, Date createdDate, String lastUpdatedBy, Date lastUpdatedDate, String medisaveAmount, String bankName, String bankAccountNo, String applicantName, String hci, String uen, String userType) {
+        this.id_ = id_;
+        this.transactionId = transactionId;
+        this.assigneeId = assigneeId;
+        this.assignedDate = assignedDate;
+        this.applicantId = applicantId;
+        this.applicationType = applicationType;
+        this.patientId = patientId;
+        this.patientName = patientName;
+        this.schemeId = schemeId;
+        this.todo = todo;
+        this.reasons = reasons;
+        this.status = status;
+        this.dueDate = dueDate;
+        this.createdBy = createdBy;
+        this.createdDate = createdDate;
+        this.lastUpdatedBy = lastUpdatedBy;
+        this.lastUpdatedDate = lastUpdatedDate;
+        this.medisaveAmount = medisaveAmount;
+        this.bankName = bankName;
+        this.bankAccountNo = bankAccountNo;
+        this.applicantName = applicantName;
+        this.hci = hci;
+        this.uen = uen;
+        this.userType = userType;
+    }
 
     @Id
     @Column(name = "ID_")

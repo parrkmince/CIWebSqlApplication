@@ -10,6 +10,23 @@ import java.util.Date;
 @Entity
 @Table(name = "ASSESSMENT_SECTION")
 public class AssessmentSection implements Serializable {
+    public AssessmentSection() {
+    }
+
+    public AssessmentSection(Float id_, String sectionKey, String sectionName, String type, Float displayOrder, String sourceSystem, String createdBy, Date createdDate, String lastUpdatedBy, Date lastUpdatedDate, String infoText, Float sectionFlag) {
+        this.id_ = id_;
+        this.sectionKey = sectionKey;
+        this.sectionName = sectionName;
+        this.type = type;
+        this.displayOrder = displayOrder;
+        this.sourceSystem = sourceSystem;
+        this.createdBy = createdBy;
+        this.createdDate = createdDate;
+        this.lastUpdatedBy = lastUpdatedBy;
+        this.lastUpdatedDate = lastUpdatedDate;
+        this.infoText = infoText;
+        this.sectionFlag = sectionFlag;
+    }
 
     @Id
     @Column(name = "ID_")

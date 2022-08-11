@@ -11,6 +11,26 @@ import java.util.Date;
 @Entity
 @Table(name = "ROLE_")
 public class Role_ implements Serializable {
+    public Role_() {
+    }
+
+    public Role_(BigInteger mvccversion, String uuid_, BigInteger roleid, BigInteger companyid, BigInteger userid, String username, Date createddate, Date modifieddate, BigInteger classnameid, BigInteger classpk, String name, String title, String description, Integer type_, String subtype) {
+        this.mvccversion = mvccversion;
+        this.uuid_ = uuid_;
+        this.roleid = roleid;
+        this.companyid = companyid;
+        this.userid = userid;
+        this.username = username;
+        this.createddate = createddate;
+        this.modifieddate = modifieddate;
+        this.classnameid = classnameid;
+        this.classpk = classpk;
+        this.name = name;
+        this.title = title;
+        this.description = description;
+        this.type_ = type_;
+        this.subtype = subtype;
+    }
 
     @Column(name = "MVCCVERSION")
     private BigInteger mvccversion;

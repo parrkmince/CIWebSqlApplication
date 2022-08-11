@@ -11,6 +11,20 @@ import java.util.Date;
 @Entity
 @Table(name = "EFASS_MAINTENANCE_BANNER")
 public class EfassMaintenanceBanner implements Serializable {
+    public EfassMaintenanceBanner() {
+    }
+
+    public EfassMaintenanceBanner(BigInteger id, String bannerContent, Date activationDate, Date deactivationDate, String portalType, Date createdDate, String createdBy, Date lastUpdatedDate, String lastUpdatedBy) {
+        this.id = id;
+        this.bannerContent = bannerContent;
+        this.activationDate = activationDate;
+        this.deactivationDate = deactivationDate;
+        this.portalType = portalType;
+        this.createdDate = createdDate;
+        this.createdBy = createdBy;
+        this.lastUpdatedDate = lastUpdatedDate;
+        this.lastUpdatedBy = lastUpdatedBy;
+    }
 
     @Id
     @Column(name = "ID")

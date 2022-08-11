@@ -10,6 +10,15 @@ import java.sql.Date;
 @Entity
 @Table(name = "EFASS_SESSION_TRACKER")
 public class EfassSessionTracker implements Serializable {
+    public EfassSessionTracker() {
+    }
+
+    public EfassSessionTracker(String screenname, String latestsessionid, Date modifieddate, String activeuser) {
+        this.screenname = screenname;
+        this.latestsessionid = latestsessionid;
+        this.modifieddate = modifieddate;
+        this.activeuser = activeuser;
+    }
 
     @Id
     @Column(name = "SCREENAME")

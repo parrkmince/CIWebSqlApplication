@@ -11,6 +11,8 @@ import java.util.Date;
 @Entity
 @Table(name =  "ASSESSOR_STAGING")
 public class AssessorStaging implements Serializable {
+    public AssessorStaging() {
+    }
 
     @Id
     @Column(name = "ASSESSOR_STAGING_ID")

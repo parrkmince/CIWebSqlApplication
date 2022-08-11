@@ -25,9 +25,7 @@ public class EfassPropsConfig implements Serializable {
         this.value = value;
     }
 
-    public String getApplication() {
-        return application;
-    }
+    public EfassPropsConfig(){}
 
     public void setApplication(String application) {
         this.application = application;

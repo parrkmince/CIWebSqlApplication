@@ -12,6 +12,27 @@ import java.util.Date;
 @Table(name = "ASSESSMENT_HISTORY")
 public class AssessmentHistory implements Serializable {
 
+    public AssessmentHistory() {
+    }
+
+    public AssessmentHistory(BigInteger id, String assessmentId, String patientId, String hciId, String type, Date assessmentDate, String assessmentType, String assessmentSetting, String assessmentStatus, String transportId, String clobPk, Float assessmentFeeByGov, Float assessmentFeeByPerson, String assessmentFeeByInstruction, String claimType) {
+        this.id = id;
+        this.assessmentId = assessmentId;
+        this.patientId = patientId;
+        this.hciId = hciId;
+        this.type = type;
+        this.assessmentDate = assessmentDate;
+        this.assessmentType = assessmentType;
+        this.assessmentSetting = assessmentSetting;
+        this.assessmentStatus = assessmentStatus;
+        this.transportId = transportId;
+        this.clobPk = clobPk;
+        this.assessmentFeeByGov = assessmentFeeByGov;
+        this.assessmentFeeByPerson = assessmentFeeByPerson;
+        this.assessmentFeeByInstruction = assessmentFeeByInstruction;
+        this.claimType = claimType;
+    }
+
     @Id
     @Column(name = "ID")
     private BigInteger id;

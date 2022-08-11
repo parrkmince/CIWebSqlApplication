@@ -10,6 +10,34 @@ import java.util.Date;
 @Entity
 @Table(name = "INSTITUTION_MASTER")
 public class InstitutionMaster implements Serializable {
+    public InstitutionMaster() {
+    }
+
+    public InstitutionMaster(String institutionId, String hciCode, String institutionName, String branchType, String branchStatus, String postalCode, String floor, String unitNo, String block, String streetName, String buildingName, String contactNum1, String contactNum2, String emailAddress, String bankCode, String bankAccountNo, String bankAccountHolderName, String createdBy, Date createdDate, String lastUpdatedBy, Date lastUpdatedDate, String uen, String uenName) {
+        this.institutionId = institutionId;
+        this.hciCode = hciCode;
+        this.institutionName = institutionName;
+        this.branchType = branchType;
+        this.branchStatus = branchStatus;
+        this.postalCode = postalCode;
+        this.floor = floor;
+        this.unitNo = unitNo;
+        this.block = block;
+        this.streetName = streetName;
+        this.buildingName = buildingName;
+        this.contactNum1 = contactNum1;
+        this.contactNum2 = contactNum2;
+        this.emailAddress = emailAddress;
+        this.bankCode = bankCode;
+        this.bankAccountNo = bankAccountNo;
+        this.bankAccountHolderName = bankAccountHolderName;
+        this.createdBy = createdBy;
+        this.createdDate = createdDate;
+        this.lastUpdatedBy = lastUpdatedBy;
+        this.lastUpdatedDate = lastUpdatedDate;
+        this.uen = uen;
+        this.uenName = uenName;
+    }
 
     @Id
     @Column(name = "INSTITUTION_ID")

@@ -1,7 +1,5 @@
 package com.ihis.efass.application.entity;
 
-import com.sun.org.apache.xpath.internal.operations.Bool;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -13,6 +11,54 @@ import java.util.Date;
 @Entity
 @Table(name = "USER_")
 public class User_ implements Serializable {
+    public User_() {
+    }
+
+    public User_(BigInteger mvccVersion, String uuid_, String externalreferencecode, BigInteger userId, BigInteger companyid, Date createddate, Date modifieddate, Boolean defaultuser, BigInteger contactid, String password_, Boolean passwordencrypted, Boolean passwordreset, Date passwordmodifieddate, String digest, String reminderqueryquestion, String reminderqueryanswer, Integer gracelogincount, String screenname, String emailaddress, BigInteger facebookid, String googleuserid, BigInteger ldapserverid, String openid, BigInteger portraitid, String languageid, String timezoneid, String greeting, String comments, String firstname, String middlename, String lastname, String jobtitle, Date logindate, String loginip, Date lastlogindate, String lastloginip, Date lastfailedlogindate, Integer failedloginattempts, Boolean lockout, Date lockoutdate, Boolean agreedtotermsofuse, Boolean emailaddressverified, Integer status) {
+        this.mvccVersion = mvccVersion;
+        this.uuid_ = uuid_;
+        this.externalreferencecode = externalreferencecode;
+        this.userId = userId;
+        this.companyid = companyid;
+        this.createddate = createddate;
+        this.modifieddate = modifieddate;
+        this.defaultuser = defaultuser;
+        this.contactid = contactid;
+        this.password_ = password_;
+        this.passwordencrypted = passwordencrypted;
+        this.passwordreset = passwordreset;
+        this.passwordmodifieddate = passwordmodifieddate;
+        this.digest = digest;
+        this.reminderqueryquestion = reminderqueryquestion;
+        this.reminderqueryanswer = reminderqueryanswer;
+        this.gracelogincount = gracelogincount;
+        this.screenname = screenname;
+        this.emailaddress = emailaddress;
+        this.facebookid = facebookid;
+        this.googleuserid = googleuserid;
+        this.ldapserverid = ldapserverid;
+        this.openid = openid;
+        this.portraitid = portraitid;
+        this.languageid = languageid;
+        this.timezoneid = timezoneid;
+        this.greeting = greeting;
+        this.comments = comments;
+        this.firstname = firstname;
+        this.middlename = middlename;
+        this.lastname = lastname;
+        this.jobtitle = jobtitle;
+        this.logindate = logindate;
+        this.loginip = loginip;
+        this.lastlogindate = lastlogindate;
+        this.lastloginip = lastloginip;
+        this.lastfailedlogindate = lastfailedlogindate;
+        this.failedloginattempts = failedloginattempts;
+        this.lockout = lockout;
+        this.lockoutdate = lockoutdate;
+        this.agreedtotermsofuse = agreedtotermsofuse;
+        this.emailaddressverified = emailaddressverified;
+        this.status = status;
+    }
 
     @Column(name = "MCCVERSION")
     private BigInteger mvccVersion;

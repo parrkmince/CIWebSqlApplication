@@ -8,6 +8,19 @@ import java.io.Serializable;
 @Entity
 @Table(name = "USER_INST")
 public class UserInst implements Serializable {
+    public UserInst() {
+    }
+
+    public UserInst(String userid, String intInstId, String corpasId, String nric, String uen, String userInstDef, String userInstType, Boolean assesorStatus) {
+        this.userid = userid;
+        this.intInstId = intInstId;
+        this.corpasId = corpasId;
+        this.nric = nric;
+        this.uen = uen;
+        this.userInstDef = userInstDef;
+        this.userInstType = userInstType;
+        this.assesorStatus = assesorStatus;
+    }
 
     @Id
     @Column(name = "USERID")

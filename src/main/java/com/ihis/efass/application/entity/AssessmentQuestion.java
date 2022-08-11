@@ -9,6 +9,26 @@ import java.io.Serializable;
 @Entity
 @Table(name = "ASSESSMENT_QUESTION")
 public class AssessmentQuestion implements Serializable {
+    public AssessmentQuestion() {
+    }
+
+    public AssessmentQuestion(Float id_, String questionNumber, String externalQuestionId, String questionText, String mandatory, String refreshFlag, String mandatoryErrorText, String errorText, String helpText, String fieldType, String sourceSystem, String createdBy, String createdDate, String lastUpdatedBy, String lastUpdatedDate) {
+        this.id_ = id_;
+        this.questionNumber = questionNumber;
+        this.externalQuestionId = externalQuestionId;
+        this.questionText = questionText;
+        this.mandatory = mandatory;
+        this.refreshFlag = refreshFlag;
+        this.mandatoryErrorText = mandatoryErrorText;
+        this.errorText = errorText;
+        this.helpText = helpText;
+        this.fieldType = fieldType;
+        this.sourceSystem = sourceSystem;
+        this.createdBy = createdBy;
+        this.createdDate = createdDate;
+        this.lastUpdatedBy = lastUpdatedBy;
+        this.lastUpdatedDate = lastUpdatedDate;
+    }
 
     @Id
     @Column(name = "id_")

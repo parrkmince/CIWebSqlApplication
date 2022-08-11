@@ -10,6 +10,14 @@ import java.math.BigInteger;
 @Entity
 @Table(name = "EFASS_SERVICE_EXTENSTION")
 public class EfassServiceExtension implements Serializable {
+    public EfassServiceExtension() {
+    }
+
+    public EfassServiceExtension(BigInteger messageId, String transactionId, String transactionData) {
+        this.messageId = messageId;
+        this.transactionId = transactionId;
+        this.transactionData = transactionData;
+    }
 
     @Id
     @Column(name = "MESSAGE_ID")

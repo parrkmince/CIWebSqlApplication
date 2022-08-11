@@ -10,6 +10,14 @@ import java.math.BigInteger;
 @Entity
 @Table(name = "ASSESSMENT_SERVICE_EXTENSTION")
 public class AssessmentServiceExtension implements Serializable {
+    public AssessmentServiceExtension() {
+    }
+
+    public AssessmentServiceExtension(BigInteger messageId, String assessmentId, String assessmentData) {
+        this.messageId = messageId;
+        this.assessmentId = assessmentId;
+        this.assessmentData = assessmentData;
+    }
 
     @Id
     @Column(name = "MESSAGE_ID")

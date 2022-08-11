@@ -10,6 +10,20 @@ import java.math.BigInteger;
 @Entity
 @Table(name =  "ASSESSOR_STAGING")
 public class ClaimTypeCalc implements Serializable {
+    public ClaimTypeCalc() {
+    }
+
+    public ClaimTypeCalc(String uuid_, BigInteger id, String assessmentType, Boolean mohPanel, Boolean disabilityReview, Boolean feeWaiverEligibilityFlag, Boolean extPeriodReview, Boolean exceptionalAssist, String claimType) {
+        this.uuid_ = uuid_;
+        this.id = id;
+        this.assessmentType = assessmentType;
+        this.mohPanel = mohPanel;
+        this.disabilityReview = disabilityReview;
+        this.feeWaiverEligibilityFlag = feeWaiverEligibilityFlag;
+        this.extPeriodReview = extPeriodReview;
+        this.exceptionalAssist = exceptionalAssist;
+        this.claimType = claimType;
+    }
 
     @Column(name = "UUID_")
     private String uuid_;

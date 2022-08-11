@@ -11,6 +11,20 @@ import java.util.Date;
 @Entity
 @Table(name = "EFASS_TERMS_OF_USE")
 public class EfassTermsOfUse implements Serializable {
+    public EfassTermsOfUse() {
+    }
+
+    public EfassTermsOfUse(BigInteger id, String touContent, Date activationDate, Boolean active, Date createdDate, String createdBy, Date lastUpdatedDate, String lastUpdatedBy, String portalType) {
+        this.id = id;
+        this.touContent = touContent;
+        this.activationDate = activationDate;
+        this.active = active;
+        this.createdDate = createdDate;
+        this.createdBy = createdBy;
+        this.lastUpdatedDate = lastUpdatedDate;
+        this.lastUpdatedBy = lastUpdatedBy;
+        this.portalType = portalType;
+    }
 
     @Id
     @Column(name = "ID")

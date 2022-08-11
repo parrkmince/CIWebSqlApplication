@@ -1,7 +1,5 @@
 package com.ihis.efass.application.entity;
 
-import com.sun.org.apache.xpath.internal.operations.Bool;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -13,6 +11,22 @@ import java.util.Date;
 @Entity
 @Table(name = "PP_USER")
 public class PpUser implements Serializable {
+    public PpUser() {
+    }
+
+    public PpUser(BigInteger ppUserId, String nric, Boolean touFlag, Date acceptDate, Date lastLoginDate, String createdBy, Date createdDate, String lastUpdatedBy, Date lastUpdatedDate, Boolean userProfileFlag, Boolean userProfileSyncFlag) {
+        this.ppUserId = ppUserId;
+        this.nric = nric;
+        this.touFlag = touFlag;
+        this.acceptDate = acceptDate;
+        this.lastLoginDate = lastLoginDate;
+        this.createdBy = createdBy;
+        this.createdDate = createdDate;
+        this.lastUpdatedBy = lastUpdatedBy;
+        this.lastUpdatedDate = lastUpdatedDate;
+        this.userProfileFlag = userProfileFlag;
+        this.userProfileSyncFlag = userProfileSyncFlag;
+    }
 
     @Id
     @Column(name = "PP_USER_ID")

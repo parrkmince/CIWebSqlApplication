@@ -11,6 +11,22 @@ import java.util.Date;
 @Entity
 @Table(name = "EFASS_USER_PROFILE_TRANSACTION")
 public class EfassUserProfileTransaction implements Serializable {
+    public EfassUserProfileTransaction() {
+    }
+
+    public EfassUserProfileTransaction(BigInteger id, BigInteger transactionId, BigInteger userId, BigInteger uen, BigInteger status, BigInteger userType, BigInteger loginType, BigInteger createdBy, Date createdDate, BigInteger lastUpdatedBy, Date lastUpdatedDate) {
+        this.id = id;
+        this.transactionId = transactionId;
+        this.userId = userId;
+        this.uen = uen;
+        this.status = status;
+        this.userType = userType;
+        this.loginType = loginType;
+        this.createdBy = createdBy;
+        this.createdDate = createdDate;
+        this.lastUpdatedBy = lastUpdatedBy;
+        this.lastUpdatedDate = lastUpdatedDate;
+    }
 
     @Id
     @Column(name = "ID")

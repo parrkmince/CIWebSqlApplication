@@ -9,6 +9,25 @@ import java.io.Serializable;
 @Entity
 @Table(name = "EFASS_CODESET")
 public class EfassCodeset implements Serializable {
+    public EfassCodeset() {
+    }
+
+    public EfassCodeset(String reasonCode, String reason, String todo, String internalTodo, String taskCode, String taskType, String sectionHeader, String category, String spaTodo, String spaReason, String spaTaskCode, String spaActionable, String spaSectionheader, String status) {
+        this.reasonCode = reasonCode;
+        this.reason = reason;
+        this.todo = todo;
+        this.internalTodo = internalTodo;
+        this.taskCode = taskCode;
+        this.taskType = taskType;
+        this.sectionHeader = sectionHeader;
+        this.category = category;
+        this.spaTodo = spaTodo;
+        this.spaReason = spaReason;
+        this.spaTaskCode = spaTaskCode;
+        this.spaActionable = spaActionable;
+        this.spaSectionheader = spaSectionheader;
+        this.status = status;
+    }
 
     @Id
     @Column(name = "REASON_CODE")

@@ -11,6 +11,39 @@ import java.util.Date;
 @Entity
 @Table(name = "USER_EXT")
 public class UserExt implements Serializable {
+    public UserExt() {
+    }
+
+    public UserExt(BigInteger userid, Boolean mohPanel, String uen, Boolean psrIndicatorAs, Boolean psrIndicatorFar, Boolean psrIndicatorMi, String asCredit, BigInteger hciId, String name, Boolean touAccepted, String hciName, String screenName, String assessorId, String assessorName, String assessorNric, String regisNum, String type, Date regisDate, Date deactivateDate, Date createDate, Date updatedDate, Boolean userProfileFlag, String corpassId, String userStatus, String roles, String assessorType, Boolean userProfileSyncFlag) {
+        this.userid = userid;
+        this.mohPanel = mohPanel;
+        this.uen = uen;
+        this.psrIndicatorAs = psrIndicatorAs;
+        this.psrIndicatorFar = psrIndicatorFar;
+        this.psrIndicatorMi = psrIndicatorMi;
+        this.asCredit = asCredit;
+        this.hciId = hciId;
+        this.name = name;
+        this.touAccepted = touAccepted;
+        this.hciName = hciName;
+        this.screenName = screenName;
+        this.assessorId = assessorId;
+        this.assessorName = assessorName;
+        this.assessorNric = assessorNric;
+        this.regisNum = regisNum;
+        this.type = type;
+        this.regisDate = regisDate;
+        this.deactivateDate = deactivateDate;
+        this.createDate = createDate;
+        this.updatedDate = updatedDate;
+        this.userProfileFlag = userProfileFlag;
+        this.corpassId = corpassId;
+        this.userStatus = userStatus;
+        this.roles = roles;
+        this.assessorType = assessorType;
+        this.userProfileSyncFlag = userProfileSyncFlag;
+    }
+
     @Id
     @Column(name = "USERID")
     private BigInteger userid;

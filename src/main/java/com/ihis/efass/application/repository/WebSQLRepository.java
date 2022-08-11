@@ -26,7 +26,7 @@ public class WebSQLRepository {
         return query.getResultList();
     }
 
-    public List<Object> inserQuery(String query){
+    public List<Object> insertQuery(String query){
         LOGGER.info("Executing insert query : {}", query);
         Query result = entityManager.createNativeQuery(query);
         return result.getResultList();
@@ -35,7 +35,7 @@ public class WebSQLRepository {
     public Integer modifyQuery(String query){
         LOGGER.info("Executing update query : {}", query);
         Integer status = 0;
-        if(StringUtils.containsIgnoreCase(query,"delete") || StringUtils.containsIgnoreCase(query,"update")){
+        if(StringUtils.containsIgnoreCase(query,"delete") || StringUtils.containsIgnoreCase(query,"update") || StringUtils.containsIgnoreCase(query,"INSERT")){
             Query result = entityManager.createNativeQuery(query);
             status = result.executeUpdate();
         }

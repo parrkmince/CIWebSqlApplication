@@ -10,6 +10,29 @@ import java.util.Date;
 @Entity
 @Table(name = "ASSESSMENT_METADATA")
 public class AssessmentMetadata implements Serializable {
+    public AssessmentMetadata() {
+    }
+
+    public AssessmentMetadata(String assessmentId, String assessorId, String assessorName, String institutionId, String acknowledgementId, Date submittedDate, Date assessmentDate, String patientId, String patientName, String assessmentType, String assessmentSetting, String processingStatus, String reimbursementStatus, String outcome, String transportId, Date createdDate, Date updatedDate, String messageId) {
+        this.assessmentId = assessmentId;
+        this.assessorId = assessorId;
+        this.assessorName = assessorName;
+        this.institutionId = institutionId;
+        this.acknowledgementId = acknowledgementId;
+        this.submittedDate = submittedDate;
+        this.assessmentDate = assessmentDate;
+        this.patientId = patientId;
+        this.patientName = patientName;
+        this.assessmentType = assessmentType;
+        this.assessmentSetting = assessmentSetting;
+        this.processingStatus = processingStatus;
+        this.reimbursementStatus = reimbursementStatus;
+        this.outcome = outcome;
+        this.transportId = transportId;
+        this.createdDate = createdDate;
+        this.updatedDate = updatedDate;
+        this.messageId = messageId;
+    }
 
     @Id
     @Column(name = "ASSESSMENT_ID")

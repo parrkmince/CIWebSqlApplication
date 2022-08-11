@@ -156,7 +156,7 @@
             });
         },
         manualQueryExecute: function() {
-            var ajaxURL = $("#ci_query_action_dropdown").val() == "INSERT" ? "/sql/manual/insert" : "/sql/manual/modify";
+            var ajaxURL = $("#ci_query_action_dropdown").val() == "INSERT" ? "/sql/manual/modify" : "/sql/manual/modify";
             var data = {
                 manualQuery: $.trim($("#ci_manual_query_script").val())
             }

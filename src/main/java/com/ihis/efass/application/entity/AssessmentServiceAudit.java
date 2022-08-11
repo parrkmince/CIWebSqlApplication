@@ -11,6 +11,19 @@ import java.util.Date;
 @Entity
 @Table(name = "ASSESSMENT_SERVICE_AUDIT")
 public class AssessmentServiceAudit implements Serializable {
+    public AssessmentServiceAudit() {
+    }
+
+    public AssessmentServiceAudit(BigInteger id, String assessmentId, String messageId, String processStat, String errorType, Date insertTimestamp, Date updateTimestamp, String serviceResponse) {
+        this.id = id;
+        this.assessmentId = assessmentId;
+        this.messageId = messageId;
+        this.processStat = processStat;
+        this.errorType = errorType;
+        this.insertTimestamp = insertTimestamp;
+        this.updateTimestamp = updateTimestamp;
+        this.serviceResponse = serviceResponse;
+    }
 
     @Id
     @Column(name = "ID")

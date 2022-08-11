@@ -11,6 +11,20 @@ import java.util.Date;
 @Entity
 @Table(name = "EFASS_ONLINE_HELP_QUESTION")
 public class EfassOnlineHelpQuestion implements Serializable {
+    public EfassOnlineHelpQuestion() {
+    }
+
+    public EfassOnlineHelpQuestion(BigInteger questionId, BigInteger categoryId, String questionText, String answerText, Boolean deleteFlag, String createdBy, Date createdDate, String lastUpdatedBy, Date lastUpdatedDate) {
+        this.questionId = questionId;
+        this.categoryId = categoryId;
+        this.questionText = questionText;
+        this.answerText = answerText;
+        this.deleteFlag = deleteFlag;
+        this.createdBy = createdBy;
+        this.createdDate = createdDate;
+        this.lastUpdatedBy = lastUpdatedBy;
+        this.lastUpdatedDate = lastUpdatedDate;
+    }
 
     @Id
     @Column(name = "QUESTION_ID")
